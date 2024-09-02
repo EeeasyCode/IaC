@@ -4,8 +4,8 @@
 
 ## Provisioning Tools | 프로비저닝 도구
 
-Terraform
+[Terraform](https://github.com/EeeasyCode/IaC/blob/d94cb99e3b601dd38c6803f93261ba9b99ab658a/terraform.md)
 
 ## SCM Tools | 구성 관리 도구
 
-Ansible
+[Ansible](https://github.com/EeeasyCode/IaC/blob/d94cb99e3b601dd38c6803f93261ba9b99ab658a/ansible.md)
