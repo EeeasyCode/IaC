@@ -47,3 +47,17 @@ source venv/bin/activate
 # Install Ansible within the virtual environment.
 pip install ansible
 ```
+
+### Inventory File
+
+- default : /etc/ansible/hosts
+- -i or --inventory: e.g ansible-playbook get_logs.yml -i staging -i production
+- Dynamic Inventory: it means the inventory can be generated on-th-fly using external scripts or tool
+
+  - `pip3 install boto3`
+
+### Ansible Config File
+
+```zsh
+ansible-config init --disabled > ansible.cfg
+```
