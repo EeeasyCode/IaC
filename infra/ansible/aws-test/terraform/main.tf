@@ -29,6 +29,9 @@ module "routing" {
 module "ec2" {
   source             = "./modules/ec2"
   public_subnet_id   = module.network.public_subnet_id
-  security_group_id  = module.security.security_group_id
+  security_group_ids = [
+    module.security.ssh_security_group_id,
+    module.security.http_security_group_id
+  ]
   availability_zone = var.availability_zone
 }

@@ -1,14 +1,14 @@
 variable "public_subnet_id" {
-  type = string
+  type        = string
   description = "ID of the public subnet"
 }
 
-variable "security_group_id" {
-  type = string
-  description = "ID of the security group"
+variable "security_group_ids" {  
+  type        = list(string)
+  description = "List of security group IDs"
 }
 
 variable "availability_zone" {
-  type = string
+  type        = string
   description = "Availability Zone for the subnet"
 }

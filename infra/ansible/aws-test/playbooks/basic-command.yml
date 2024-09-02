@@ -1,0 +1,7 @@
+---
+- name: basic command
+  hosts: my_group
+
+  tasks:
+    - name: Execute command 'date'
+      command: date

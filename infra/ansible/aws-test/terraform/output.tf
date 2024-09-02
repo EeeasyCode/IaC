@@ -8,9 +8,12 @@ output "public_subnet_id" {
   value       = module.network.public_subnet_id
 }
 
-output "security_group_id" {
-  description = "The ID of the security group"
-  value       = module.security.security_group_id
+output "ssh_security_group_id" {
+  value = module.security.ssh_security_group_id
+}
+
+output "http_security_group_id" {
+  value = module.security.ssh_security_group_id
 }
 
 output "ec2_instance_id" {
