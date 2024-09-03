@@ -1,7 +1,47 @@
 ---
 - name: basic command
-  hosts: my_group
+  hosts: localhost
+
+  # vars_files:
+  #   - vars.yml
+
+  vars:
+    today: "Today is {{ ansible_date_time.date }}"
+    person: "changmin"
 
   tasks:
     - name: Execute command 'date'
       command: date
+
+    - name: Execute command 'whoami'
+      command: whoami
+
+    - name: Show hosts file
+      command: cat hosts chdir=/etc
+
+    - name: Create folder if it does not exist
+      command: mkdir /tmp/hello creates=/tmp/hello
+
+    - name: Create a file world
+      file:
+        path: /tmp/hello/world
+        state: touch
+
+    - name: add context to /tmp/hello/world
+      lineinfile:
+        path: /tmp/hello/world
+        line: "Hello World"
+
+    - name: insert after /tmp/hello/world
+      lineinfile:
+        path: /tmp/hello/world
+        line: "{{ today}}"
+        insertafter: "hello world"
+
+    - name: add context to /tmp/hello/world
+      lineinfile:
+        path: "/tmp/hello/world"
+        line: "{{ person }}"
+
+    - name: Show content of /tmp/hello/world
+      command: cat /tmp/hello/world
